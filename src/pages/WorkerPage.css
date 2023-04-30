@@ -1,0 +1,21 @@
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td,
+th {
+    border: 1px solid #0000003b;
+    text-align: left;
+    padding: 8px;
+     
+}
+
+
+/* tr:nth-child(odd) {
+    background-color: #9B7D7D;
+} */
+th{
+    background-color: #9B7D7D
+}
