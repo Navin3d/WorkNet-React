@@ -79,7 +79,7 @@ function WorkerPage() {
               justifyContent="space-evenly"
               alignItems="center"
             >
-              <Grid item sm={6} md={6} lg={6}>
+              <Grid item sm={4} md={4} lg={4}>
                 <Grid
                   container
                   direction="row"
@@ -101,7 +101,7 @@ function WorkerPage() {
                   </Grid>
                 </Grid>
               </Grid>
-              <Grid item sm={6} md={6} lg={6}>
+              <Grid item sm={4} md={4} lg={4}>
                 <Grid
                   container
                   direction="row"
@@ -144,7 +144,6 @@ function WorkerPage() {
                     </tr>
                   ))
                 }
-
               </table>
             </div>
           </Grid>

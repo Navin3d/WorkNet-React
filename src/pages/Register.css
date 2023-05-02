@@ -9,7 +9,7 @@
 /* body{
     background-color: #FFE2C0;
 } */
-section{
+.Register_page{
     display: flex;
     justify-content: center;
     background: url(../images/reg.png);
@@ -34,7 +34,7 @@ section{
 
 }
 
-h2{
+.heading{
     font-size: 2em;
     color: #fff;
     text-align: center;
@@ -202,6 +202,18 @@ button{
     box-shadow: 0 5px 5px rgba(0,0,0,0.2);
 
 } */
+::placeholder {
+  color: rgb(36, 36, 36);
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+ color: rgb(36, 36, 36);
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+ color: rgb(36, 36, 36);
+}
 
 
 @media  (max-width:360px){

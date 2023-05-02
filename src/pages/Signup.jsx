@@ -34,7 +34,7 @@ function Signup() {
                 <div class="right">
                     <form onSubmit={handleSubmit}>
                         <section class="copy">
-                            <h2>SIGN UP</h2>
+                            <h2 className='Signup_heading'>SIGN UP</h2>
                         </section>
 
                         <div class="input-container name">

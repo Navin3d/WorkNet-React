@@ -28,65 +28,62 @@ function Register() {
     }
     return (
         <div>
-            <section>
+            <section className='Register_page'>
                 <div class="register-box">
 
                     <form onSubmit={handleSubmit}>
-                        <h2>REGISTER</h2>
+                        <h2 className='heading'>REGISTER</h2>
                         <div class="reg-box">
                             <span class="icon">
                                 <ion-icon name="person"></ion-icon>
                             </span>
-                            <input type="text" name="name" onChange={handleChange} value={requestBody.name} required />
-                            <label>Name</label>
+                            <input type="text" name="name" onChange={handleChange} value={requestBody.name} required placeholder="Name" />
+                            
 
                         </div>
                         <div class="reg-box">
                             <span class="icon">
                                 <ion-icon name="id-card"></ion-icon>
                             </span>
-                            <input type="Aadhar" name="aadhar_id" onChange={handleChange} value={requestBody.aadhar_id} required />
-                            <label>Aadhar</label>
+                            <input type="number" name="aadhar_id" onChange={handleChange} value={requestBody.aadhar_id} required placeholder='Aadhar'/>
                         </div>
 
                         <div class="reg-box">
                             <span class="icon">
                                 <ion-icon name="call"></ion-icon>
                             </span>
-                            <input type="password" name="password" onChange={handleChange} value={requestBody.password} required />
-                            <label>Password</label>
+                            <input type="password" name="password" onChange={handleChange} value={requestBody.password} required placeholder='Password' />
+                           
                         </div>
 
                         <div class="reg-box">
                             <span class="icon">
                                 <ion-icon name="journal"></ion-icon>
                             </span>
-                            <input type="text" name="type_of_worker" onChange={handleChange} value={requestBody.type_of_worker} required />
-                            <label>Type of work</label>
+                            <input type="text" name="type_of_worker" onChange={handleChange} value={requestBody.type_of_worker} required placeholder='Type of work' />
                         </div>
 
                         <div class="reg-box">
                             <span class="icon">
                                 <ion-icon name="pin"></ion-icon>
                             </span>
-                            <input type="location" name="location" onChange={handleChange} value={requestBody.location} required />
-                            <label>Location</label>
+                            <input type="text" name="location" onChange={handleChange} value={requestBody.location} required placeholder='Location' />
+                            
                         </div>
 
                         <div class="reg-box">
                             <span class="icon">
                                 <ion-icon name="transgender-outline"></ion-icon>
                             </span>
-                            <input type="text" name="gender" onChange={handleChange} value={requestBody.gender} required />
-                            <label>Gender</label>
+                            <input type="text" name="gender" onChange={handleChange} value={requestBody.gender} required placeholder='Gender' />
+                            
                         </div>
 
                         <div class="reg-box">
                             <span class="icon">
                                 <ion-icon name="call"></ion-icon>
                             </span>
-                            <input type="password" name="mobile_number" onChange={handleChange} value={requestBody.mobile_number} required />
-                            <label>Phone number</label>
+                            <input type="number" name="mobile_number" onChange={handleChange} value={requestBody.mobile_number} required placeholder='Phone number' />
                         </div>
 
                         <button type="submit">Register</button>

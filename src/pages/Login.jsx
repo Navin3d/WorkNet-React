@@ -16,27 +16,27 @@ function Login() {
         }
     }
     return (
-        <div><section>
+        <div><section className='Login_page'>
             <div class="login-box">
 
                 <form onSubmit={handleSubmit}>
                     <h2>Login</h2>
                     <div class="input-box">
-                        <label>Aadhar Yen</label>
+                        
                         <span class="icon">
                             <ion-icon name="mail"></ion-icon>
                         </span>
-                        <input type="text" onChange={(e) => { setUserName(e.target.value) }} value={username} required />
+                        <input type="text" onChange={(e) => { setUserName(e.target.value) }} value={username} required placeholder='Aadhaar Number'/>
                     </div>
 
                     <div class="input-box">
-                        <label>Password</label>
+                        
                         <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
-                        <input type="password" onChange={(e) => { setPassword(e.target.value) }} value={password} required />
+                        <input type="password" onChange={(e) => { setPassword(e.target.value) }} value={password} required placeholder='Password' />
                     </div>
 
                     <div class="conform_forget">
-                        <label><input type="checkbox" />
+                        <label className='confirm'><input type="checkbox" />
                             Confirm password</label>
                         <a href="#">Forget password</a>
                     </div>

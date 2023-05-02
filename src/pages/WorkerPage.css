@@ -19,3 +19,16 @@ th {
 th{
     background-color: #9B7D7D
 }
+.workerType_field ,
+.location_field{
+    height: 50px;
+    width: 200px;
+    padding: 5px;   
+}
+.filter{
+    background-color: #9B7D7D;
+    border-radius: 3px;
+    padding: 12px 24px;
+    color:#000;  
+
+}
