@@ -103,8 +103,8 @@ function Register() {
                 }
             </script> */}
                         <div class="register-link">
-                            <p>Already have an account?
-                                <a href="/login">Login</a>
+                            <p>
+                                <a href="#"></a>
                             </p>
                         </div>
                     </form>

@@ -14,8 +14,9 @@ function Home() {
        <div class="main">      
        <ul>
          <li><a href="#"> HOME </a></li>
-         <li><a href="#"> ABOUT </a></li>
-         <li><a href="#"> CONTACT US </a></li>
+         <li><a href="#About_us"> ABOUT </a></li>
+         <li><a href="#contact"> CONTACT US </a></li>
+         <li><a href="/login"> LOGIN</a></li>
        </ul>
        </div>
        <div class="content">
@@ -49,7 +50,7 @@ function Home() {
    <div class="header"><h1>Contact Us</h1>
    <hr style={{height:"3px",borderWidth:"0",color:"#000",backgroundColor:"#000" ,width:"98%"}}/></div>
 
-   <div class="contact_box">
+   <div id= "contact" class="contact_box">
    <h2>Get in Touch</h2>
    <input type="text" name="email" placeholder="EMAIL"/>
    <textarea rows="4" cols="50" placeholder="MESSAGE">
