@@ -7,23 +7,23 @@ import Grid from '@mui/material/Grid';
 import { Container } from '@mui/material';
 
 function WorkerPage() {
-    const type_of_workers=[
-        {label:'Plumber'},
-        {label:'Painter'},
-        {label:'Electrician'},
-        {label: 'Carpenter'},
-        {label: 'Children caring'},
-        {label: 'Animal care'},
-        {label: 'gardener'}
-    ]
+  const type_of_workers = [
+    { label: 'Plumber' },
+    { label: 'Painter' },
+    { label: 'Electrician' },
+    { label: 'Carpenter' },
+    { label: 'Children caring' },
+    { label: 'Animal care' },
+    { label: 'gardener' }
+  ]
   const locations = [
     { label: 'Porur' },
     { label: 'Perambur' },
     { label: 'Avadi' },
     { label: 'Kattupakkam' },
     { label: 'Iyyappanthangal' },
-    { label:'Kundrathur'}
-    ]
+    { label: 'Kundrathur' }
+  ]
   return (
     <div className='worker_page'>
       <Container maxWidth="md">
@@ -53,7 +53,7 @@ function WorkerPage() {
               justifyContent="space-evenly"
               alignItems="center"
             >
-              <Grid item sm={6} md={6} lg={6}>
+              <Grid item sm={4} md={4} lg={4}>
                 <Grid
                   container
                   direction="row"
@@ -62,20 +62,12 @@ function WorkerPage() {
                 >
                   <Grid item>
                     <div>
-                      <Autocomplete
-                        disablePortal
-                        id="combo-box-demo"
-                        options={type_of_workers}
-                        sx={{ width: 300 }}
-                        renderInput={(params) => (
-                          <TextField {...params} label="Type of Worker" />
-                        )}
-                      />
+                      <input type="text" name="type_of_worker" className='workerType_field' placeholder='Type of worker' />
                     </div>
                   </Grid>
                 </Grid>
               </Grid>
-              <Grid item sm={6} md={6} lg={6}>
+              <Grid item sm={4} md={4} lg={4}>
                 <Grid
                   container
                   direction="row"
@@ -84,15 +76,21 @@ function WorkerPage() {
                 >
                   <Grid item>
                     <div>
-                      <Autocomplete
-                        disablePortal
-                        id="combo-box-demo"
-                        options={locations}
-                        sx={{ width: 300 }}
-                        renderInput={(params) => (
-                          <TextField {...params} label="Locations" />
-                        )}
-                      />
+                      <input type="text" name="location" className='location_field' placeholder='Location' />
+                    </div>
+                  </Grid>
+                </Grid>
+              </Grid>
+              <Grid item sm={4} md={4} lg={4}>
+                <Grid
+                  container
+                  direction="row"
+                  justifyContent="center"
+                  alignItems="center"
+                >
+                  <Grid item>
+                    <div>
+                      <button className='filter'>Filter</button>
                     </div>
                   </Grid>
                 </Grid>

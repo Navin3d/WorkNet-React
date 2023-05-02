@@ -14,15 +14,12 @@ body {
 
 }
 
-h1 {
-    font-size: 2.25rem;
-    font-weight: 700;
 
-}
 
-h2 {
+.Signup_heading {
     font-size: 1.5rem;
     font-weight: 700;
+    color: black;
 
 
 }
@@ -96,6 +93,7 @@ a:hover {
 
 form input[type="text"],
 form input[type="email"],
+form input[type="number"],
 form input[type="password"] {
     display: block;
     width: 100%;
