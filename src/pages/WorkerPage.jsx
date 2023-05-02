@@ -1,29 +1,55 @@
-
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './WorkerPage.css'
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 import Grid from '@mui/material/Grid';
+import axios from "axios";
 import { Container } from '@mui/material';
 
 function WorkerPage() {
-    const type_of_workers=[
-        {label:'Plumber'},
-        {label:'Painter'},
-        {label:'Electrician'},
-        {label: 'Carpenter'},
-        {label: 'Children caring'},
-        {label: 'Animal care'},
-        {label: 'gardener'}
-    ]
+  const type_of_workers = [
+    { label: 'Plumber' },
+    { label: 'Painter' },
+    { label: 'Electrician' },
+    { label: 'Carpenter' },
+    { label: 'Children caring' },
+    { label: 'Animal care' },
+    { label: 'gardener' }
+  ]
   const locations = [
     { label: 'Porur' },
     { label: 'Perambur' },
     { label: 'Avadi' },
     { label: 'Kattupakkam' },
     { label: 'Iyyappanthangal' },
-    { label:'Kundrathur'}
-    ]
+    { label: 'Kundrathur' }
+  ]
+
+  const [filter, setFilter] = useState({
+    location: "",
+    type: ""
+  });
+  let [data, setData] = useState([]);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFilter((prev) => ({ ...prev, [name]: value }));
+    refresh();
+  };
+
+  useEffect(() => {
+    refresh();
+  }, []);
+
+  const refresh = async () => {
+    let aggLoc = (filter.location.length > 0) ? filter.location : "null";
+    let aggType = (filter.type.length > 0) ? filter.type : "null";
+    const response = await axios.get(`http://localhost:6969/worker/work/${aggType}/location/${aggLoc}`);
+    data = response.data;
+    setData(data);
+    console.log("==>s", data);
+  }
+
   return (
     <div className='worker_page'>
       <Container maxWidth="md">
@@ -68,7 +94,7 @@ function WorkerPage() {
                         options={type_of_workers}
                         sx={{ width: 300 }}
                         renderInput={(params) => (
-                          <TextField {...params} label="Type of Worker" />
+                          <TextField {...params} name="type" onChange={handleChange} value={filter.location} label="Type of Worker" />
                         )}
                       />
                     </div>
@@ -90,7 +116,7 @@ function WorkerPage() {
                         options={locations}
                         sx={{ width: 300 }}
                         renderInput={(params) => (
-                          <TextField {...params} label="Locations" />
+                          <TextField {...params} name="location" onChange={handleChange} value={filter.location} label="Locations" />
                         )}
                       />
                     </div>
@@ -108,42 +134,17 @@ function WorkerPage() {
                   <th>Location</th>
                   <th>Mobile Number</th>
                 </tr>
-                <tr>
-                  <td>Vaish</td>
-                  <td>Plumber</td>
-                  <td>porur</td>
-                  <td>6789543254</td>
-                </tr>
-                <tr>
-                  <td>Priya</td>
-                  <td>Carpenter</td>
-                  <td>Perambur</td>
-                  <td>9875242857</td>
-                </tr>
-                <tr>
-                  <td>Varsha</td>
-                  <td>Painter</td>
-                  <td>Avadi</td>
-                  <td>8765402456</td>
-                </tr>
-                <tr>
-                  <td>Komel</td>
-                  <td>Electrician</td>
-                  <td>kattupakkam</td>
-                  <td>7654054374</td>
-                </tr>
-                <tr>
-                  <td>kaushi</td>
-                  <td>Chidren caring</td>
-                  <td>Avadi</td>
-                  <td>6876502463</td>
-                </tr>
-                <tr>
-                  <td>Logasri</td>
-                  <td>Animal care</td>
-                  <td>Kundrathur</td>
-                  <td>8758734986</td>
-                </tr>
+                {
+                  data.map((sWorker) => (
+                    <tr>
+                      <td>{ sWorker.name }</td>
+                      <td>{ sWorker.type_of_worker }</td>
+                      <td>{ sWorker.location }</td>
+                      <td>{ sWorker.mobile_number }</td>
+                    </tr>
+                  ))
+                }
+
               </table>
             </div>
           </Grid>
