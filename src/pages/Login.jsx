@@ -10,9 +10,9 @@ function Login() {
         e.preventDefault();
         const res = await axios.post("http://localhost:6969/auth/login", { username, password });
         console.log(res.data);
-        if (res.status == 200) {
+        if (new Boolean(res.data)) {
             localStorage.setItem("auth", new Boolean(res.data));
-            navigate("/");
+            navigate("/worker-find");
         }
     }
     return (
